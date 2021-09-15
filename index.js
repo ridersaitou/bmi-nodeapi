@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
   } else if (bmi > 25 && bmi <= 30) {
     label = "Overweight";
   } else {
-    label = "Obese";
+    label = "Obesity";
   }
   //console.log("[TEST]");
   //res.writeHead(200, { "Content-Type": "application/json" });
