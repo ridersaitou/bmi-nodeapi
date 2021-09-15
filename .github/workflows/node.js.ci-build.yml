@@ -19,7 +19,6 @@ jobs:
           node-version: 14.x
       - run: npm i
       - run: npm run build --if-present
-      - run: npm start
 
   push-to-dockerhub:
     runs-on: ubuntu-latest
