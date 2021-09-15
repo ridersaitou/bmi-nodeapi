@@ -5,25 +5,23 @@ name: Node.js CD
 
 on:
   push:
-    branches: [ master ]
-
+    branches: [master]
 
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Deploy Docker image to VPS
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.PRIVATE_KEY }}
-        port: 22
-        script: |
-          sudo su
-          cd /home/sentomaru/app
-          docker pull sentanueddy/bmi-happy-app2:latest
-          docker images
-          docker run  -it --rm -p 8888:5000 -d --name happybmi-nodejs sentanueddy/bmi-happy-app2
+      - name: Deploy Docker image to VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY }}
+          port: 22
+          script: |
+            sudo su
+            cd /home/sentomaru/app
+            docker pull sentanueddy/bmi-happy-app2:latest
+            docker images
+            docker run  -it --rm -p 8888:5000 -d --name happybmi-nodejs sentanueddy/bmi-happy-app2
