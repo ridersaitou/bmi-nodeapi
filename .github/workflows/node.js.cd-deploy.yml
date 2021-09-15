@@ -20,7 +20,9 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
           script: |
-            whoami
             uname -a
             sudo su
             whoami
+            docker pull sentanueddy/bmi-happy-app2:latest
+            docker images
+            docker ps
