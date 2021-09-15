@@ -22,3 +22,5 @@ jobs:
           script: |
             whoami
             uname -a
+            sudo su
+            whoami
