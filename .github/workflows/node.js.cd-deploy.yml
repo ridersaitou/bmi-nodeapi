@@ -25,3 +25,5 @@ jobs:
             sudo docker pull sentanueddy/bmi-happy-app2:latest
             sudo docker images
             sudo docker ps
+            sudo docker run  -it --rm -p 8888:5000 -d --name happybmi-nodejs sentanueddy/bmi-happy-app2
+            sudo docker ps
