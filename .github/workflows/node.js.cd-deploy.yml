@@ -21,7 +21,6 @@ jobs:
           port: 22
           script: |
             sudo su
-            cd /home/sentomaru/app
             docker pull sentanueddy/bmi-happy-app2:latest
             docker images
             docker run  -it --rm -p 8888:5000 -d --name happybmi-nodejs sentanueddy/bmi-happy-app2
